@@ -1,0 +1,45 @@
+## Gitlab CI/CD
+=====================
+
+# Agenda:-
+i.) Build basic CI/CD Pipeline           ## App Code >>> Run Test >>> Biuild Docker Image >>>  Push to Docker hub Private Registory >>> Deploy to Remore Ubuntu Server
+ii.) Gitlab Architecture
+iii.) Basic Concept of Gitlab CI/CD
+
+
+
+## Gitlab :- Complete DevOps Plateform. Where you can build complete Devops workflow. Also, you don'thave to integrate with multiple external tools.
+             Ex:- Plan >>> Implement >>> Test >>> Package >>> Release >>> Observe
+             it's a Saas service.
+         
+         
+# Github Instance/Serevr :- It hosts application code, execute pipelines & gitlab configuration.
+
+# Gitlab Runner:- It is Agent which connected to Gitlab server & executes CI/CD jobs.
+                  A Gitlab.com is managed Github server which manage multiple Runner. 
+                  
+                    
+                    
+  ###                     Sample Project
+     ========================= ======================
+   
+   ## PythonAgenda:-       Code >>> Run Test >>> Biuild Docker Image >>>  Push to Docker hub Private Registory >>> Deploy to Remore Ubuntu Server
+   
+   # Sample Python Code Repo:-  https://github.com/benc-uk/pthon-demoapp
+   
+   * git clone git@gitlsb.com:mamuchi/gitlab-cicd-crash-course.git        ## Pulling repo to local machine
+   
+   * cd git;ab-cicd-crash-course
+   
+   * cd src > app > tests > test_api.py           {##these 2 files are test files which run test case, we don;t have to worry about how it is written but execute}
+                            test_views.py
+                       
+              
+   * cd ..
+   * cd ..
+   * cd tests > postman.json     ##{it's a configuration file which executes test cases through test files}
+   
+   
+  
+                           
+             
