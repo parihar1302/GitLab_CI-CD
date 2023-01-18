@@ -25,13 +25,13 @@ iii.) Basic Concept of Gitlab CI/CD
    
    ## PythonAgenda:-       Code >>> Run Test >>> Biuild Docker Image >>>  Push to Docker hub Private Registory >>> Deploy to Remore Ubuntu Server
    
-   # Sample Python Code Repo:-  https://github.com/benc-uk/pthon-demoapp
+   # Sample Python Code Repo:-  https://github.com/benc-uk/python-demoapp
    
    # download Python3 & pip as package manager/build tool on local server
    
    # make install        ##{to run test cases}
    
-   * git clone git@gitlsb.com:nanuchi/gitlab-cicd-crash-course.git        ## Pulling repo to local machine
+   * git clone git@gitlab.com:nanuchi/gitlab-cicd-crash-course.git        ## Pulling repo to local machine
    
    * cd git;ab-cicd-crash-course
    
