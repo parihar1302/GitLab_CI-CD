@@ -15,7 +15,7 @@ iii.) Basic Concept of Gitlab CI/CD
          
 # Github Instance/Serevr :- It hosts application code, execute pipelines & gitlab configuration.
 
-# Gitlab Runner:- It is Agent which connected to Gitlab server & executes CI/CD jobs.
+# Gitlab Runner:- It is Agent which connected to Gitlab server & executes CI/CD jobs on different env like mac, linux & windows.
                   A Gitlab.com is managed Github server which manage multiple Runner. 
                   
                     
@@ -27,7 +27,11 @@ iii.) Basic Concept of Gitlab CI/CD
    
    # Sample Python Code Repo:-  https://github.com/benc-uk/pthon-demoapp
    
-   * git clone git@gitlsb.com:mamuchi/gitlab-cicd-crash-course.git        ## Pulling repo to local machine
+   # download Python3 & pip as package manager/build tool on local server
+   
+   # make install        ##{to run test cases}
+   
+   * git clone git@gitlsb.com:nanuchi/gitlab-cicd-crash-course.git        ## Pulling repo to local machine
    
    * cd git;ab-cicd-crash-course
    
@@ -38,6 +42,67 @@ iii.) Basic Concept of Gitlab CI/CD
    * cd ..
    * cd ..
    * cd tests > postman.json     ##{it's a configuration file which executes test cases through test files}
+   
+   * cd ..
+   * cat makefile        {# executing test cases}
+   
+   
+   # NOw  go to terminal & run below command:-
+   
+   * make test        ## this command will execute test cases through terminal
+   
+   
+   # {note:- you canverify test cases on consol itself}
+   
+   # Note:- before running any test cases or run apps, it needs to download the dependency based on the language.
+            dependencies are stored inside /src/requirements.txt for Python code.
+            
+   # Dependencies are downloaded :- pip install
+   # Tests are executed :- pytest
+   
+   # Now go to terminal & run application:-
+   
+   * export PORT=5004
+   * make run              ##{starting application on 5004, by-default it will run on 5000 Port}
+   
+   # hit the url with http://127.0.0.1:5004        {#to verify over browser}
+   
+   
+   
+   # Now Build CI/CD Pipeline:-
+   ---------------------------------------
+   
+   * Pipeline is scripted & written in code, hosted inside application git repo.
+   * Whole CI/CD configuration is written in YAML file named as .gitlab-ci.yml
+   * Now gitlab will detect the configuration file & execute it.
+   * Pipeline job gets executed in Gitlab runner. on different env like mac, linux & windows.
+   * Shell is oen executor.
+   
+   # Gitlab server >>> Gitlab Runner >>> shell executor run Pipeline Job
+   
+   # Gitlab server >>> Gitlab Runner >>> Docker/Container >>> run Pipeline Job          ## Gitlab Managed Runner (uses Ruby image to start container)
+   
+   
+   ## Senerio:- Question is Gitlab managed Runner uses Ruby by-default & we arehaving Python code ? 
+      Solution:- We can specify the docker image
+   
+   
+   
+   # NOw creating .gitlab-ci.yml file :-
+  --------------------------------------
+   
+   # Now create new file from gitlab UI & named it as .gitlab-ci.yml
+   
+   run_tests:                                  ##{ this is a job}
+     image: python :3.9-slim-buster           ##{image attribute to specify latest image from dockerhub}{this image will have python & pip inside container but not make}
+     before_script:                           ##{before_script run before script attribute & after_script runs after script attribute. }
+       - apt update && apt install make         ##{installing make as }
+     script:                                 ##{property to execute the command}
+       - make test                           ## {this is the command to execute test case} {make, pip & python needs to be installed on locally}
+       
+     
+   # Commite
+   *
    
    
   
